@@ -4,7 +4,7 @@ import numpy as np
 #define lambda
 lam = 7
 
-#
+# prob of getting exactly 7
 
 prob_7 = stats.poisson.pmf(7, lam)
 print(prob_7)
@@ -13,11 +13,11 @@ print(prob_7)
 prob_4 = stats.poisson.cdf(2, lam)
 print(prob_4)
 
-## Task 4:
+## Probability of getting 9 or more defects
 prob_more_than_9 = 1 - stats.poisson.cdf(9, lam)
 print(prob_more_than_9)
 
-## Task 5:
+## monthly defects
 month_defects = stats.poisson.rvs(lam, size = 365)
 
 ## Task 6:
@@ -27,17 +27,17 @@ print(month_defects[0:20])
 val = 7 * 365
 print(val)
 
-## Task 8:
+## sum of all monthly defects
 year_defects = sum(month_defects)
 print(year_defects)
 
-## Task 9:
+## print mean of month_defects
 print(np.mean(month_defects))
 
-## Task 10:
+## maximum defects in a month
 print(month_defects.max())
 
-## Task 11:
+## probaility of getting more than max value
 probability_max = 1 - stats.poisson.cdf(16, lam)
 print(probability_max)
 
